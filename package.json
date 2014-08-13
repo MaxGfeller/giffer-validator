@@ -1,0 +1,33 @@
+{
+  "name": "giffer-validator",
+  "version": "0.0.0",
+  "description": "Validates downloaded gifs from giffer",
+  "main": "index.js",
+  "scripts": {
+    "test": "tap tests/test-validator.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/MaxGfeller/giffer-validator.git"
+  },
+  "keywords": [
+    "giffer",
+    "plugin",
+    "validator"
+  ],
+  "author": "Max Gfeller <max.gfeller@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MaxGfeller/giffer-validator/issues"
+  },
+  "homepage": "https://github.com/MaxGfeller/giffer-validator",
+  "devDependencies": {
+    "giffer": "^1.3.0",
+    "levelup": "^0.18.6",
+    "memdown": "^0.10.2",
+    "tap": "^0.4.12"
+  },
+  "dependencies": {
+    "gm": "^1.16.0"
+  }
+}
