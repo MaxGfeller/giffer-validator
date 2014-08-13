@@ -28,6 +28,6 @@
     "tap": "^0.4.12"
   },
   "dependencies": {
-    "gm": "^1.16.0"
+    "gif-explode": "0.0.1"
   }
 }

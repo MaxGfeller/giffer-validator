@@ -1,6 +1,5 @@
 var fs = require('fs')
-var gm = require('gm')
-var im = gm.subClass({ imageMagick: true })
+var explode = require('gif-explode')
 
 module.exports = function(giffer) {
     giffer.pre('saveMetaData', function(next, url, id) {
@@ -13,13 +12,14 @@ module.exports = function(giffer) {
             // if stats is null, the file is empty
             if(!stats.size) return
 
+            var frames = 0
             var rs = fs.createReadStream(filename)
-            im(rs, id + 'gif[3]')
-                .identify(function(err, data) {
-                    if(err) return
-
-                    next()
-                })
+                .pipe(explode(function(frame) {
+                    frames++
+                    if(frames === 2) {
+                        return next()
+                    }
+                }))
         })
     })
 }
