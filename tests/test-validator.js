@@ -14,7 +14,7 @@ var db = levelup('/whatever', {
 })
 
 test('Test functionality of giffer-validator', function(t) {
-    t.plan(2)
+    t.plan(1)
     var giffer = new Giffer({
         db: db,
         outputDir: __dirname + '/temp',
