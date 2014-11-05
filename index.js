@@ -19,6 +19,9 @@ module.exports = function(giffer) {
                     if(frames === 2) {
                         return next()
                     }
+                })
+                .on('error', function() {
+                  // do nothing
                 }))
         })
     })
