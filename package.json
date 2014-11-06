@@ -28,6 +28,7 @@
     "tap": "^0.4.12"
   },
   "dependencies": {
-    "gif-explode": "0.0.1"
+    "concat-stream": "^1.4.6",
+    "gify-parse": "^1.0.4"
   }
 }
