@@ -1,6 +1,6 @@
 {
   "name": "giffer-validator",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Validates downloaded gifs from giffer",
   "main": "index.js",
   "scripts": {
