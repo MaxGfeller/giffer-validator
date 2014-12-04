@@ -8,25 +8,27 @@ module.exports = function(giffer) {
 
     fs.stat(filename, function(err, stats) {
       // when an error occured, drop the file
-      if(err) return
+      if(err) return fs.unlink(filename, noop)
 
       // if stats is null, the file is empty
-      if(!stats.size) return
+      if(!stats.size) return fs.unlink(filename, noop)
 
       var frames = 0
       var rs = fs.createReadStream(filename)
         .pipe(concat(function(data) {
           var i = parse.getInfo(data)
 
-          if(!i.valid) return
+          if(!i.valid) return fs.unlink(filename, noop)
 
-          if(!i.animated) return
+          if(!i.animated) return fs.unlink(filename, noop)
 
           next()
         }))
         .on('error', function() {
-          return
+          return fs.unlink(filename, noop)
         })
     })
   })
 }
+
+function noop() {}
